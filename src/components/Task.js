@@ -1,19 +1,16 @@
-import React from "react";
+export default function Task({ task, onDeleteTask, onToggleTask }) {
+  const taskStyle = task.completed ? { textDecoration: 'line-through' } : null;
 
-export default function Task({ task, onToggleTask, onDeleteTask }) {
   return (
-    <li>
-      <label>
-        <input
-          type="checkbox"
-          checked={task.completed}
-          onChange={() => onToggleTask(task.id)}
-        />
-        {task.description} 
-      </label>
+    <li style={taskStyle}>
+      <input
+        type="checkbox"
+        checked={task.completed}
+        onChange={() => onToggleTask(task.id)}
+      />
+      {task.description}
       <button onClick={() => onDeleteTask(task.id)}>Delete</button>
     </li>
   );
 }
-
 

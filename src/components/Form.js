@@ -27,15 +27,17 @@ export default function Form({ onAddTask }) {
       <h3>What tasks do you want to add?</h3>
 
       <input
-        type="text"
-        placeholder="Task..."
-        name="description"
-        id="description"
-        value={description}
-        onChange={handleInputChange}
+      type="text"
+      placeholder="New Task"
+      name="description"
+      id="description"
+      value={description}
+      onChange={handleInputChange}
       />
 
-      <button type="submit">Add</button>
+
+      <button type="submit">Add Task</button>
+
     </form>
   );
 }
